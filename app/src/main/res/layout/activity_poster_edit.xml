@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sevenheaven.zxingdemo.PosterEditActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:gravity="center"
+            android:text="返回"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:text="完成"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_draft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="60dp"
+            android:layout_toLeftOf="@id/tv_done"
+            android:text="存草稿箱"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <ImageView
+            android:id="@+id/iv_bgimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <com.sevenheaven.zxingdemo.sticker.StickerView
+            android:id="@+id/stickerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+        <com.sevenheaven.zxingdemo.sticker.TextStickerView
+            android:id="@+id/textsticker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_watermark"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/media_effect_tab_bg"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="水印"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radio_sticker"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/media_effect_tab_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="贴纸"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+
+            <RadioButton
+                android:id="@+id/radio_qrcode"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/media_effect_tab_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:minWidth="54dp"
+                android:text="二维码"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/radio_filter"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/media_effect_tab_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="滤镜"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/fl_editcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>
